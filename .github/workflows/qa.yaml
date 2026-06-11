@@ -39,7 +39,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install the project
-        run: uv sync
+        run: uv init
 
       - name: Test with pytest
         run: uvx pytest -vv
