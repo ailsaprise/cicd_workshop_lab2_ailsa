@@ -38,8 +38,13 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.head_ref }}
+
       - name: Install the project
-        run: uv init
+        run: uv sync
 
       - name: Test with pytest
         run: uvx pytest -vv
